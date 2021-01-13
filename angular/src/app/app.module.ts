@@ -17,13 +17,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EmployeeComponent,
     ShowEmpComponent,
     AddEditEmpComponent,
-    FormsModule,
-    ReactiveFormsModule
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
