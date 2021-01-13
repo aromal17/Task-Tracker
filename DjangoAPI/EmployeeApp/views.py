@@ -10,14 +10,14 @@ from EmployeeApp.serializers import EmployeeSerializer
 @csrf_exempt
 def employeeApi(request,id = 0):
     if request.method == 'GET':
-        employees = Employee.objects.all()
-        employee_seraializer = EmployeeSerializer(employee,many = True)
+        employee = Employee.objects.all()
+        employee_serializer = EmployeeSerializer(employee,many = True)
         return JsonResponse(employee_serializer.data,safe = False)
     
     elif request.method == 'POST':
         employee_data = JSONParser().parse(request)
-        employee_seraializer = EmployeeSerializer(data = employee_data)
-        if employee_seraializer.is_valid():
+        employee_serializer = EmployeeSerializer(data = employee_data)
+        if employee_serializer.is_valid():
             employee_serializer.save()
             return JsonResponse("Added successfully!!!",safe = False)
         return JsonResponse("failed to add to db!!!",safe = False)
@@ -25,9 +25,9 @@ def employeeApi(request,id = 0):
     elif request.method == 'PUT':
         employee_data = JSONParser().parse(request)
         employee = Employee.objects.get(EmployeeId = employee_data['EmployeeId'])
-        employee_seraializer = EmployeeSerializer(employee,data = employee_data)
-        if employee_seraializer.is_valid():
-            employee_seraializer.save()
+        employee_serializer = EmployeeSerializer(employee,data = employee_data)
+        if employee_serializer.is_valid():
+            employee_serializer.save()
             return JsonResponse("Updated Successfully!!!",safe = False)
         return JsonResponse("COuld not update!!!",safe = False)
     
