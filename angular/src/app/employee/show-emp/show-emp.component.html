@@ -1,1 +1,24 @@
-<p>show-emp works!</p>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Task</th>
+        <th scope="col">Task Date</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let dataItem of EmployeeList">
+          <td>{{dataItem.EmployeeId}}</td>
+          <td>{{dataItem.EmployeeUsername}}</td>
+          <td>{{dataItem.EmployeeTask}}</td>
+          <td>{{dataItem.TaskDate}}</td>
+          <td>
+              <button type = "button" class = "btn btn-light mr-2">Edit</button>
+              <button type = "button" class = "btn btn-light mr-2">Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
