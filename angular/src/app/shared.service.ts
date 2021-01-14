@@ -19,7 +19,7 @@ readonly APIUrl = "http://127.0.0.1:8000";
     return this.http.post(this.APIUrl+'/employee/',val);
   }
 
-  upadateEmployee(val:any){
+  updateEmployee(val:any){
     return this.http.put(this.APIUrl+'/employee/',val);
   }
 

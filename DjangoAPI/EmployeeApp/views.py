@@ -20,6 +20,7 @@ def employeeApi(request,id = 0):
         if employee_serializer.is_valid():
             employee_serializer.save()
             return JsonResponse("Added successfully!!!",safe = False)
+        print(employee_serializer.errors)
         return JsonResponse("failed to add to db!!!",safe = False)
     
     elif request.method == 'PUT':
@@ -29,6 +30,7 @@ def employeeApi(request,id = 0):
         if employee_serializer.is_valid():
             employee_serializer.save()
             return JsonResponse("Updated Successfully!!!",safe = False)
+        print(employee_serializer.errors)
         return JsonResponse("COuld not update!!!",safe = False)
     
     elif request.method == 'DELETE':

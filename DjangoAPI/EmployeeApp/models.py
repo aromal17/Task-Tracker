@@ -4,5 +4,5 @@ from django.db import models
 class Employee(models.Model):
     EmployeeId = models.AutoField(primary_key = True)
     EmployeeUsername = models.CharField(max_length=30)
-    EmployeeTask = models.CharField(max_length = 200)
+    EmployeeTask = models.CharField(max_length = 30)
     TaskDate = models.DateField()
