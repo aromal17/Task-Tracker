@@ -14,12 +14,14 @@ export class AddEditEmpComponent implements OnInit {
   EmployeeId! : string;
   EmployeeUsername! : string;
   EmployeeTask! : string;
+  BugId! : string;
   TaskDate! : string;
 
   ngOnInit(): void {
     this.EmployeeId = this.emp.EmployeeId;
     this.EmployeeUsername = this.emp.EmployeeUsername;
     this.EmployeeTask = this.emp.EmployeeTask;
+    this.BugId = this.emp.BugId;
     this.TaskDate = this.emp.TaskDate;
 
   }
@@ -30,6 +32,7 @@ export class AddEditEmpComponent implements OnInit {
       EmployeeId:this.EmployeeId,
       EmployeeUsername: this.EmployeeUsername,
       EmployeeTask : this.EmployeeTask,
+      BugId : this.BugId,
       TaskDate : this.TaskDate
 
     }
@@ -44,6 +47,7 @@ export class AddEditEmpComponent implements OnInit {
       EmployeeId:this.EmployeeId,
       EmployeeUsername: this.EmployeeUsername,
       EmployeeTask : this.EmployeeTask,
+      BugId : this.BugId,
       TaskDate : this.TaskDate
 
     }

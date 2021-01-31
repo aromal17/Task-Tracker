@@ -28,6 +28,7 @@ export class ShowEmpComponent implements OnInit {
       EmployeeId : 0,
       EmployeeUsername : "",
       EmployeeTask: "",
+      BugId: "",
       TaskDate: ""
     }
 
