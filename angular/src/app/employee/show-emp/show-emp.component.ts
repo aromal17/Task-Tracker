@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgControlStatus } from '@angular/forms';
 import {SharedService} from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-show-emp',
@@ -59,6 +61,7 @@ export class ShowEmpComponent implements OnInit {
   refreshEmpList(){ 
     this.service.getEmpList().subscribe(data => {
       this.EmployeeList = data;
+      
     });
   }
 }

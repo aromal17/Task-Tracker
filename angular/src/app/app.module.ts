@@ -11,13 +11,15 @@ import { SharedService } from './shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { FilterPipe } from './filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     ShowEmpComponent,
     AddEditEmpComponent,
-    
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
