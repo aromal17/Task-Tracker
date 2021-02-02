@@ -18,6 +18,7 @@ export class ShowEmpComponent implements OnInit {
   ModalTitle!:string;
   ActivateAddEditEmpComp:boolean=false;
   emp:any; 
+  searchText!:string;
 
   ngOnInit(): void {
     this.refreshEmpList();
