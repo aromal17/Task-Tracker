@@ -42,7 +42,7 @@ import { FilterPipe } from './filter.pipe';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'client id'
+              'client id' //enter your client id here
             )
           },
         ]
