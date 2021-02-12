@@ -1,0 +1,20 @@
+.btn{
+    border-radius: 8rem;
+    height: fit-content;
+}
+
+.btns{
+    display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+
+.search{
+    border-radius: 50%;
+}

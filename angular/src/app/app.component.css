@@ -4,3 +4,13 @@ h1{
 .cust{
     font-family: 'Varela Round', sans-serif;
 }
+
+.card{
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.btn{
+    border-radius: 8rem;
+}
+

@@ -8,10 +8,14 @@ import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
 import { AddEditEmpComponent } from './employee/add-edit-emp/add-edit-emp.component';
 import { SharedService } from './shared.service';
 
+import { SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FilterPipe } from './filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -26,10 +30,26 @@ import { FilterPipe } from './filter.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocialLoginModule,
   ],
 
-  providers: [SharedService],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'client id'
+            )
+          },
+        ]
+      } as SocialAuthServiceConfig,
+  },
+    SharedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,28 @@
-<div class="container ">
+
+<div class="container" *ngIf = "!user">
   <h1 class="d-flex justify-content-center m-4">Task TRACKER</h1>
   <h5 class="d-flex justify-content-center m-4 cust">An online platform for keeping track of the employees daily Tasks...</h5>
+  <br>
+  <br>
+  <div  class="card text-center">
+    <h6 class = "card-header"> Task TRACKER </h6>
+    <div class = "card-block">
+      <br>
+      <h4 class= "card-title">Sign in with your Google Account to continue</h4>
+    </div>
+    <br>
+   
+    <div class = "card-block">
+      <button type = "button" class = "btn btn-outline-primary my-2" (click) = "signInWithGoogle()"> <i class="fa fa-google"></i> Google </button>
+    </div>
+    <br>
+  </div>
+</div>
+
+
+<div class="container" *ngIf = "user">
+  <h1 class="d-flex justify-content-center m-4">Task TRACKER</h1>
+  <h5 class="d-flex justify-content-center m-4 cust">An online platform for keeping track of the employees daily Tasks...</h5>
+  
   <router-outlet></router-outlet>
 </div>

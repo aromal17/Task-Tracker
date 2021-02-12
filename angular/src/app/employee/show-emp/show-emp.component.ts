@@ -3,6 +3,9 @@ import { NgControlStatus } from '@angular/forms';
 import {SharedService} from 'src/app/shared.service';
 
 
+import { SocialAuthService } from 'angularx-social-login';
+import { SocialUser, GoogleLoginProvider } from 'angularx-social-login';
+
 @Component({
   selector: 'app-show-emp',
   templateUrl: './show-emp.component.html',
@@ -10,10 +13,10 @@ import {SharedService} from 'src/app/shared.service';
 })
 export class ShowEmpComponent implements OnInit {
 
-  constructor(private service:SharedService) { }
+  constructor(private service:SharedService, private authService : SocialAuthService) { }
 
   EmployeeList:any=[];
-
+  user! : SocialUser;
   
   ModalTitle!:string;
   ActivateAddEditEmpComp:boolean=false;
@@ -22,9 +25,14 @@ export class ShowEmpComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshEmpList();
+    this.authService.authState.subscribe((user: SocialUser) => {
+      this.user = user;
+    })
   }
 
- 
+  signOut() : any {
+    this.authService.signOut();
+  }
 
   addClick(){
     this.emp = {
