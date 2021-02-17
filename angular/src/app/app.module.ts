@@ -37,12 +37,12 @@ import { FilterPipe } from './filter.pipe';
   providers: [{
     provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: false,
+        autoLogin: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'client id' //enter your client id here
+              'client id here'
             )
           },
         ]

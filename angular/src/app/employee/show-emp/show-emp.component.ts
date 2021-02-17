@@ -22,8 +22,18 @@ export class ShowEmpComponent implements OnInit {
   ActivateAddEditEmpComp:boolean=false;
   emp:any; 
   searchText!:string;
+  admin! : Boolean;
+
 
   ngOnInit(): void {
+    
+    if(localStorage.getItem("userType") === "admin"){
+      this.admin = true;
+    }
+    else{
+      this.admin = false;
+    }
+
     this.refreshEmpList();
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;

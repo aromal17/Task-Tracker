@@ -18,3 +18,7 @@ img {
 .search{
     border-radius: 50%;
 }
+
+.bug{
+  color: red;
+}

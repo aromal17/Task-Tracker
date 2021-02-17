@@ -46,7 +46,7 @@
         <th scope="col">Task</th>
         <th scope="col">Bug ID</th>
         <th scope="col"class="text-center">Task Completion Date</th>
-        <th scope="col" class="text-center">Options</th>
+        <th *ngIf = 'admin' scope="col" class="text-center">Options</th>
       </tr>
     </thead>
     <tbody>
@@ -54,9 +54,9 @@
           <!-- <td>{{dataItem.EmployeeId}}</td> -->
           <td class="cust"><b>{{dataItem.EmployeeUsername}}</b></td>
           <td>{{dataItem.EmployeeTask}}</td>
-          <td>{{dataItem.BugId}}</td>
+          <td class="bug">{{dataItem.BugId}}</td>
           <td class="text-center">{{dataItem.TaskDate}}</td>
-          <td class = "text-center">
+          <td *ngIf = 'admin' class = "text-center">
               <button type = "button" class = "btn btn-outline-info mr-2" data-toggle="modal"  data-target="#exampleModal" (click) = "editClick(dataItem)" data-backdrop = "static" data-keyboard = "false"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit  </button>
               <button type = "button" class = "btn btn-outline-danger mr-2" (click) = "deleteClick(dataItem)"><i class="fa fa-trash"></i> Delete </button>
           </td>
