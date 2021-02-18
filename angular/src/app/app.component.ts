@@ -21,34 +21,9 @@ export class AppComponent {
   ngOnInit(): void{
 
     this.loggedInStatus = "false";
-
-    if(localStorage.getItem("userType") === "admin"){
-      this.admin = true;
-    }
-    else{
-      this.admin = false;
-    }
- 
+  
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;
-     
-      if (user) {
-        localStorage.setItem('loggedIn','true');
-        this.loggedInStatus = JSON.stringify(localStorage.getItem('loggedIn'));
-        
-        if(localStorage.getItem("userType") === "admin"){
-          this.admin = true;
-        }
-        else{
-          this.admin = false;
-        }
-        
-      } else {
-        console.log("not available");
-        localStorage.setItem('loggedIn','false');
-        this.loggedInStatus = JSON.stringify(localStorage.getItem('loggedIn'));
-
-      }
     })
   }
 

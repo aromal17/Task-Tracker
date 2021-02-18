@@ -27,16 +27,21 @@ export class ShowEmpComponent implements OnInit {
 
   ngOnInit(): void {
     
-    if(localStorage.getItem("userType") === "admin"){
-      this.admin = true;
-    }
-    else{
-      this.admin = false;
-    }
+    
+    
 
     this.refreshEmpList();
     this.authService.authState.subscribe((user: SocialUser) => {
       this.user = user;
+      console.log(user.email);
+
+      if(user.email === "aromalbenny17@gmail.com" || user.email === "sirisha.gudivada1003@gmail.com"){
+        this.admin = true;
+      }
+      else{
+        this.admin = false;
+      }
+  
     })
   }
 
